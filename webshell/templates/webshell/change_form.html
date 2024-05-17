@@ -31,7 +31,6 @@
             {% if not is_popup %}
                 <ul class="object-tools">
                     {% block object-tools-items %}
-                        <li><a href="{% url opts|admin_urlname:'history' original.pk|admin_urlquote %}" class="historylink">{% trans "History" %}</a></li>
                         {% if has_absolute_url %}<li><a href="{% url 'admin:view_on_site' content_type_id original.pk %}" class="viewsitelink">{% trans "View on site" %}</a></li>{% endif%}
                     {% endblock %}
                 </ul>
@@ -72,7 +71,7 @@
             {% endif %}
             {# JavaScript for prepopulated fields #}
             {% prepopulated_fields_js %}
-            <button id="id_execute" type="button" onclick="executeSource();" style="font-size: 14px; padding: 10px 20px;">{% trans "Execute" %} (Ctrl+Enter)</button>
+            <button id="id_execute" type="button" onclick="executeSource();" style="font-size: 14px; margin-left:0; color: black; width: 250px;">{% trans "Execute" %} (Ctrl+Enter)</button>
             <hr><br>
             <pre id="id_output" class="syntax"></pre>
         </div>
